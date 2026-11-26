@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vardiyayı Takvime Aktar · Dijital Çakı</title>
+<meta name="description" content="Döngüyü oluştur, günleri kontrol et ve takvim dosyasını indir.">
+<link rel="icon" href="/icons/dijital-caki.svg">
+<link rel="stylesheet" href="/tool.css?v=20261126d">
+<link rel="stylesheet" href="/gunluk/style.css?v=1">
+<link rel="stylesheet" href="vardiya.css?v=1">
+<script src="/theme.js?v=20261126c"></script>
+<script type="module" src="app.js?v=2"></script>
+</head>
+<body>
+<main class="tool daily shift-page">
+<header>
+  <a class="back" href="/#plan">Uygulamalar</a>
+  <h1>Vardiyayı Takvime Aktar</h1>
+  <p class="intro">Vardiya döngünü takvim dosyasına dönüştür.</p>
+</header>
+<section class="panel">
+  <div class="fields shift-fields">
+    <label>İlk gün<input id="start" type="date"></label>
+    <label>Gün sayısı<input id="days" type="number" min="1" max="366" value="30"></label>
+  </div>
+  <label class="cycle-field">Döngü
+    <input id="cycle" value="G G N N İ İ İ İ" maxlength="160" autocapitalize="characters" aria-describedby="cycle-help">
+    <span id="cycle-help" class="muted">G gündüz · N gece · İ izin. Aralara boşluk koy.</span>
+  </label>
+  <details class="shift-settings">
+    <summary>Vardiya saatleri</summary>
+    <div class="shift-hours">
+      <span></span><span class="muted">Başlangıç</span><span class="muted">Bitiş</span>
+      <span>Gündüz</span><input aria-label="Gündüz başlangıç" id="day-start" type="time" value="08:00">
+      <input aria-label="Gündüz bitiş" id="day-end" type="time" value="20:00">
+      <span>Gece</span><input aria-label="Gece başlangıç" id="night-start" type="time" value="20:00">
+      <input aria-label="Gece bitiş" id="night-end" type="time" value="08:00">
+    </div>
+  </details>
+</section>
+<section class="panel">
+  <div class="shift-preview-heading">
+    <h2>Önizleme</h2>
+    <button id="export" type="button" class="primary" aria-label="Takvim dosyasını indir">Takvimi indir</button>
+  </div>
+  <p class="muted shift-preview-help">Her günü ayrı düzenleyebilirsin. Saatler TSİ.</p>
+  <div id="shift-navigation" class="shift-navigation" role="group" aria-label="Önizleme sayfaları" hidden>
+    <button type="button" id="previous-days" aria-label="Önceki yedi gün">‹</button>
+    <span id="day-range" aria-live="polite"></span>
+    <button type="button" id="next-days" aria-label="Sonraki yedi gün">›</button>
+  </div>
+  <ul id="preview" class="shift-days" aria-label="Vardiya günleri"></ul>
+  <p id="status" role="status"></p>
+</section>
+</main>
+</body>
+</html>

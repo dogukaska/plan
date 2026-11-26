@@ -1,0 +1,36 @@
+.shift-page { max-width: 570px; }
+.shift-page .shift-fields { gap: 10px; }
+.shift-page .cycle-field { display: grid; gap: 4px; }
+.shift-page .cycle-field .muted { font-size: .8rem; }
+.shift-settings { border-top: 1px solid var(--line); padding-top: 8px; }
+.shift-settings summary { width: fit-content; cursor: pointer; font-size: .875rem; }
+.shift-settings summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.shift-hours {
+  display: grid; grid-template-columns: max-content repeat(2, minmax(0, 1fr));
+  align-items: center; gap: 6px 8px; margin-top: 8px; font-size: .875rem;
+}
+.shift-hours .muted { font-size: .75rem; }
+.shift-page :is(input[type=date], input[type=time], input[type=number]) {
+  display: block; box-sizing: border-box; min-inline-size: 0; max-inline-size: 100%;
+  inline-size: 100%; block-size: 36px; padding: 4px 8px;
+}
+.shift-page :is(input[type=date], input[type=time]) { appearance: none; -webkit-appearance: none; }
+.shift-page input::-webkit-date-and-time-value { min-inline-size: 0; margin: 0; text-align: start; }
+.shift-page input::-webkit-datetime-edit { padding: 0; }
+.shift-preview-heading, .shift-navigation { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.shift-preview-heading h2 { margin: 0; }
+.shift-page .shift-preview-help { margin: 4px 0 10px; font-size: .8rem; }
+.shift-navigation {
+  width: fit-content; border: 1px solid var(--line); border-radius: 8px;
+  gap: 10px; font-size: .8rem; color: var(--mute); font-variant-numeric: tabular-nums;
+}
+.shift-navigation button { width: 36px; border-color: transparent; background: transparent; font-size: 1.2rem; }
+.shift-days { list-style: none; padding: 0; margin: 7px 0 0; }
+.shift-days li {
+  display: grid; grid-template-columns: minmax(0, 1fr) 6rem; align-items: center;
+  column-gap: 10px; min-height: 54px; padding-block: 5px; border-bottom: 1px solid var(--line);
+}
+.shift-days li:first-child { border-top: 1px solid var(--line); }
+.shift-date { display: grid; min-width: 0; gap: 2px; font-size: .875rem; line-height: 1.25; }
+.shift-date .shift-time { font-size: .75rem; font-variant-numeric: tabular-nums; }
+.shift-days select { min-width: 0; height: 36px; padding-block: 4px; background: var(--glass); }
