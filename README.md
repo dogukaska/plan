@@ -7,3 +7,5 @@
 Takvim dosyası üretiminde MPL 2.0 lisanslı [ical.js 2.2.1](https://github.com/kewisch/ical.js) kullanılır. Lisans metni `vardiya/vendor/LICENSE` dosyasındadır.
 
 Vardiyayı Takvime Aktar aracının geliştirilmesi, mobil arayüz incelemesi ve takvim çıktısı testleri OpenAI Codex desteğiyle yapıldı.
+
+İleri ve geri tarih hesaplayan, seçilen tatilleri atlayan İş Günü Hesabı OpenAI Codex desteğiyle eklendi.
