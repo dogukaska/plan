@@ -1,0 +1,18 @@
+.workdays { max-width: 600px; }
+.workdays .fields { align-items: end; }
+.workdays :is(input[type=date], input[type=number], select) {
+  display: block;
+  box-sizing: border-box;
+  inline-size: 100%;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  block-size: max(var(--control-height), 2.25em);
+}
+.workdays input[type=date] { appearance: none; -webkit-appearance: none; }
+.workdays input::-webkit-date-and-time-value { min-inline-size: 0; margin: 0; text-align: start; }
+.workdays input::-webkit-datetime-edit { padding: 0; }
+.workdays .holiday-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-block: 4px; }
+.workdays summary { cursor: pointer; font-size: .875rem; margin-bottom: 6px; }
+@media (max-width: 480px) {
+  .workdays .fields { grid-template-columns: minmax(0, 1fr); }
+}
